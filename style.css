@@ -1,4 +1,7 @@
 
+:root{
+    --main-font:'M PLUS 1 Code', sans-serif;
+}
 *{
     box-sizing: border-box;
     padding: 0px;
@@ -8,131 +11,145 @@ html{
     font-size: 62.5%;
 }
 .nav{
+    width: 100vw;
     display: flex;
+    align-items: center;
     flex-wrap: wrap;
     background-color:skyblue;
     
-    width: 100vw;
 }
 .nav__search-bar{
-    margin: 1.3rem 0px;
     display: flex;
-    justify-content: center;
+    margin: 1.3rem 0px;
+    align-items: center;
+    
 }
 .nav__login a{
     text-decoration: none ;
     color:black;
 }
 
+.main{
+    width: 100vw;
+     
+ 
+ }
+ .sidebar{
+    background-color: wheat;
+ }
+ .sidebar ul{
 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
+}
 .sidebar ul a{
     text-decoration: none;
     list-style: none;
-    color: black;
     font-family: var(--main-font);
-    
-    
+    color: black;
+      
 }
 
 
 #top-recipes{
     width: 100vw;
-   font-size: 2rem ;
+    display: flex;
+    justify-content: center;
    font-family: var(--main-font);
-   display: flex;
-   justify-content: center;
+  
 }
-.main{
-    height: 60vh;
-}
-.recent{
+
+.feed{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
     overflow: auto;
-    margin-top: 3rem;
+   
+}
+.feed figure img{
+    border-radius: 1rem;
 }
 .footer{
+    width: 100vw;
+    height: 7vh;
     display: flex;
     align-items: center;
     justify-content: end;
-    width: 100vw;
-    height: 7vh;
     background-color: skyblue;
 }
 .footer img{
-    margin-right: 2rem;
     height: 5vh;
     width: 5vh;
+    margin-right: 2rem;
+   
+    
 }
 @media (min-width:375px){
     :root{
-        --main-font:'M PLUS 1 Code', sans-serif;
-        --size-1:2rem;
+        --size-1:2.5rem;
+        --size-2:2rem;
+        --size-3:1.7rem
     }
     .nav{
         justify-content: space-around;
-        align-items: center;
         min-height: 7vh;
-        font-size: var(--size-1);
+        font-size: var(--size-2);
     }
     .nav__logo{
         width: 100vw;
         display: flex;
         flex-direction: column;
         align-items: center;
+        font-size: var(--size-1);
        
     }
     .nav__logo img{
         height: 8vh;
         width: 9vh;
     }
-    .nav__search-bar input{
-        height: 3rem;
-       
-        max-width: 35vw;
+    #search{
+        height: 2.7rem;
+        max-width: 30vw;
     }
+    
+   
+   
     .sidebar{
         width: 100vw;
-        min-height: 10vh;
-        background-color: wheat;
-        
+        min-height: 10vh; 
+        font-size: var(--size-2);
     }
-    .sidebar ul{
-
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        
-    }
+    
     .sidebar ul a{
         padding: 0.2rem 1rem; 
         font-size: 2rem;
     }
    
-    .main{
-   
-        height: 73.7vh;
-        display: flex;
-        flex-direction: column;
-         align-items: center;
-         
+   #top-recipes{
+       font-size: var(--size-2);
+       margin: 00.5rem;
+   }
+   .main{
+    height: 73.2vh;
+    display: flex;
+    flex-direction: column;
+     align-items: center;    
+}
+    .feed{
+        height: auto;
     }
-   
-    .recent{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .recent figure{
-        height: 19rem;
+    .feed figure{
+        height: 20rem;
         width: 15rem;
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column;
         
-        justify-content: center;
-        margin-left: 0.5rem;
-        font-size: 1.7rem;
+        font-size: var(--size-3);
 
     }
-    .recent figure img{
+    .feed figure img{
         height: 14rem;
         width: 15rem;
 
@@ -143,24 +160,30 @@ html{
 }
 @media (min-width:700px)
    {
-       .nav{
-           display: flex;
-           align-items: center;
-           justify-content: space-around;
+    :root{
+        --size-1:4rem;
+        --size-2:2.5rem;
+        --size-3:1.7rem
+
+    }   
+    .nav{
+           justify-content: space-between;
+          
        }
        .nav__logo{
-           width: 28vw;
+           width: auto;
+           margin-left: 2vw;
            display: flex;
            flex-direction: row;   
            
        }
        .nav__logo h1{
-           
-           font-size: 4rem;
+           margin-left: 2vw;
+           font-size: var(--size-1);
 
        }
        .nav__search-bar{
-        font-size: 3.5rem;
+        font-size: var(--size-2);
     }
         .nav__search-bar span{
             margin-right: 2rem;
@@ -168,37 +191,72 @@ html{
        #search{
         font-size: 2rem;   
         height: 4rem;
-           width: 20rem;
+        max-width: 15vw;
        }
        .nav__login{
-        display: flex;   
-          
+        margin-right: 2vw;
            
        }
         .main{ 
         display: flex;
            flex-direction: row;
-           height: 81.7vh;
-           background-color: royalblue;
-       }
-       .recent{
-           width: auto;
+           height: 84vh;
            
        }
+       .feed{
+           
+            width: auto;
+           height:inherit ;
+           overflow: auto;  
+       }
+       .feed figure{
+        width: 20rem;
+        height: 20rem;
+        align-items: center;
+    }
+       .feed figure img{
+        
+        width: 20rem;
+           height: 18rem;
+       }
+      
        .sidebar{
-        width: 35vw;   
-        height: 73.7vh;
+           padding: 2vw;
+        min-width: 25rem;
+        max-width: 33rem;   
+        height: inherit;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        
         
            
            
        }
        .sidebar ul {
+        min-height: 50%;
+        
         display: flex;
         flex-direction: column;
         justify-content: space-between;
        }
         .sidebar ul a{
-           font-size: 2.5rem;
+           font-size: var(--size-2);
            
        }
+   }
+   @media (min-width:900px){
+    .main{
+        height: 81.7vh;
+    }
+    .feed figure{
+        width: 35rem;
+        height: 38rem;
+        
+    }   
+    .feed figure img{
+        height: 35rem;
+        width: 35rem;
+       }
+
    }
